@@ -3,23 +3,42 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "build:webpack:dev": "webpack -d",
-    "build:webpack:prod": "webpack -p",
+    "build": "webpack --mode development --devtool source-map",
     "build:babel": "babel App.js --out-file build/App.js",
-    "prettier": "prettier --write \"**/*\""
+    "start": "webpack-dev-server --mode development --open",
+    "format": "prettier --write ."
   },
   "dependencies": {
-    "@babel/polyfill": "^7.2.5"
+    "core-js": "3.28.0"
   },
   "devDependencies": {
-    "@babel/cli": "^7.2.3",
-    "@babel/core": "^7.2.2",
-    "@babel/preset-env": "^7.3.1",
-    "webpack-cli": "^3.2.1",
-    "webpack": "^4.29.0",
-    "babel-loader": "^8.0.5",
-    "file-loader": "^3.0.1",
-    "source-map-loader": "^0.2.4",
-    "prettier": "^1.16.3"
+    "@babel/core": "7.20.12",
+    "@babel/preset-env": "7.20.2",
+    "browserslist": "4.21.4",
+    "chart.js": "4.2.1",
+    "webpack-cli": "5.0.1",
+    "webpack": "5.75.0",
+    "babel-loader": "9.1.2",
+    "file-loader": "6.2.0",
+    "prettier": "2.8.3",
+    "webpack-dev-server": "4.11.1"
+  },
+  "browserslist": [
+    "ios >=14"
+  ],
+  "babel": {
+    "presets": [
+      [
+        "@babel/preset-env",
+        {
+          "useBuiltIns": "usage",
+          "corejs": {
+            "version": "3.28",
+            "proposals": true
+          },
+          "debug": true
+        }
+      ]
+    ]
   }
 }
