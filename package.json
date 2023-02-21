@@ -4,8 +4,10 @@
   "private": true,
   "scripts": {
     "build": "webpack --mode development --devtool source-map",
+    "build-prod": "webpack --mode production --devtool source-map",
     "build:babel": "babel App.js --out-file build/App.js",
     "start": "webpack-dev-server --mode development --open",
+    "start-prod": "webpack-dev-server --mode production --open",
     "format": "prettier --write ."
   },
   "dependencies": {

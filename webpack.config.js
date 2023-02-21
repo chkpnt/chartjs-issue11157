@@ -22,6 +22,7 @@ module.exports = {
         test: /\.js$/,
         // just omitting the following doesn't work:
         // exclude: /node_modules/,
+        include: path.resolve(__dirname, "node_modules/chart.js"),
         loader: "babel-loader",
       },
       {
